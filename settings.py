@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     # Third party
     'rest_framework',
     'django_filters',
+    'drf_spectacular',
     
     # Local apps
     'apps.products',
@@ -100,6 +101,14 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Aforro API',
+    'DESCRIPTION': 'Backend API for Aforro assignment',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
 }
 
 # Redis & Celery setup
